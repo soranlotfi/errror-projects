@@ -1,4 +1,3 @@
-import book from "../pages/Book";
 
 const books = [
     {
@@ -37,13 +36,10 @@ export const BookList = () => {
     return books
 }
 
-export function getBook(num){
-    console.log("book function" + num)
+// export const getBook=(num)=>{
+//     return books.map(book=>book.number===num)
+// }
 
-
-    books.filter(book=>{
-        console.log(num , book.number , "Asssssss")
-        console.log("book function id" + book.number)
-        book.number === num
-    })
+export const getBook = (number) => {
+    return books.find(book => book.number === number)
 }
