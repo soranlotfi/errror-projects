@@ -1,19 +1,29 @@
 import {BookList} from "../data/data";
-import {Link, NavLink, Outlet} from "react-router-dom";
-const Books = ()=>{
+import {Link, NavLink, Outlet, useSearchParams} from "react-router-dom";
+
+const Books = () => {
     const books = BookList();
-    console.log(
-        books.map(book=>{
-            return book.name
-        })
-    )
-    return(
+    const [searchParams, setSearchParams] = useSearchParams()
+    return (
 
         <div className="container">
             <section className="books-container">
                 <div className="bookLinks">
+                    <input type="text" placeholder="جستجوی کتاب ..." value={searchParams.get("filter" || "")}
+                           onChange={event => {
+                               let filter = event.target.value;
+                               if (filter) {
+                                   setSearchParams({filter})
+                               }else{
+                                   setSearchParams({})
+                               }
+                           }
+                           }/>
+                    {/*{*/}
+                    {/*    books.filter((book))*/}
+                    {/*}*/}
                     {
-                        books.map((book)=>(
+                        books.map((book) => (
                             <NavLink key={book.number} to={`book/${book.number}`}>{book.name}</NavLink>
                         ))
                     }

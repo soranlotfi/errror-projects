@@ -17,8 +17,8 @@ function App() {
                   <Route index element={<h1>کتاب مورد نظر را انتخاب کنید</h1>}></Route>
                   <Route path = "book/:bookId" element={<Book/>}/>
               </Route>
-              <Route path = "*" element={<NotFound/>}/>
           </Route>
+            <Route path = "*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>
     </div>
