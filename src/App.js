@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Books from "./pages/Books";
 import Book from "./pages/Book";
+import NotFound from "./pages/NotFound";
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,7 @@ function App() {
                   <Route index element={<h1>کتاب مورد نظر را انتخاب کنید</h1>}></Route>
                   <Route path = "book/:bookId" element={<Book/>}/>
               </Route>
+              <Route path = "*" element={<NotFound/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

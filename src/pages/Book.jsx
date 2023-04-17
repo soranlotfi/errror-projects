@@ -24,14 +24,14 @@ const Book = ()=>{
     const book = getBook(parseInt(params.bookId))
     console.log(book)
     return(
-        <main style={{padding:"1rem"}}>
+        <div className="book-interduce" style={{padding:"1rem"}}>
             <h2>قیمت : {`${book.amount} تومان`}</h2>
             <p>
                 نام کتاب : {" "}{book.name}
             </p>
             <p>تاریخ انتشار: {book.due}</p>
             <button>حذف کتاب</button>
-        </main>
+        </div>
     )
 }
 export default Book;

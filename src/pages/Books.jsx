@@ -1,5 +1,5 @@
 import {BookList} from "../data/data";
-import {Link, Outlet} from "react-router-dom";
+import {Link, NavLink, Outlet} from "react-router-dom";
 const Books = ()=>{
     const books = BookList();
     console.log(
@@ -9,16 +9,18 @@ const Books = ()=>{
     )
     return(
 
-        <section className="books-container">
-           <div className="bookLinks">
-               {
-                   books.map((book)=>(
-                       <Link key={book.number} to={`book/${book.number}`}>{book.name}</Link>
-                   ))
-               }
-           </div>
-            <Outlet/>
-        </section>
+        <div className="container">
+            <section className="books-container">
+                <div className="bookLinks">
+                    {
+                        books.map((book)=>(
+                            <NavLink key={book.number} to={`book/${book.number}`}>{book.name}</NavLink>
+                        ))
+                    }
+                </div>
+                <Outlet/>
+            </section>
+        </div>
 
     )
 }

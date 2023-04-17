@@ -36,9 +36,6 @@ export const BookList = () => {
     return books
 }
 
-// export const getBook=(num)=>{
-//     return books.map(book=>book.number===num)
-// }
 
 export const getBook = (number) => {
     return books.find(book => book.number === number)
